@@ -50,7 +50,7 @@
               <%= image_tag book.user.get_profile_image(50,50) %>
               <% end %>
              </tb>
-             <tb><%= link_to book.title %></tb>
+             <tb><%= link_to book.title, book_path %></tb>
              <tb><%= book.body %></tb>
            <% end %>
            </tr>
