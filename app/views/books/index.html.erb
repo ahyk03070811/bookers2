@@ -1,4 +1,4 @@
-div class="container px-5 px-sm-0">
+<div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
@@ -14,7 +14,7 @@ div class="container px-5 px-sm-0">
        </tr>
      </table>
      <div class="row">
-       <%= link_to edit_user_path, class: "btn btn-outline-secondary" do %>
+       <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary" do %>
        <i class="fas fa-user-cog"></i>
        <% end %>
      </div>
@@ -30,9 +30,10 @@ div class="container px-5 px-sm-0">
      </div>
      <%= f.submit 'Create Book', class:"btn btn-success" %>
     <% end %>
+    </div>
      <div class="col-md-8 offset-md-1">
        <h2>Books</h2>
-       <table class="table table-hover table-inverse">
+       <table class="table">
          <thead>
            <tr>
              <th></th>
@@ -42,17 +43,19 @@ div class="container px-5 px-sm-0">
            </tr>
          </thead>
          <tbody>
-           <tb>
            <% @books.each do |book| %>
-           <%= link_to book.user do %>
-           <%= image_tag book.user.get_profile_image(50,50) %>
+           <tr>
+             <td>
+              <%= link_to book.user do %>
+              <%= image_tag book.user.get_profile_image(50,50) %>
+              <% end %>
+             </tb>
+             <tb><%= link_to book.title %></tb>
+             <tb><%= book.body %></tb>
            <% end %>
-           </tb>
-           <tb><%= link_to book.title %></tb>
-           <tb><%= book.body %></tb>
-           <% end %>
+           </tr>
          </tbody>
-     </div>
-    </div>
-  </div>
+         </table>
+      </div>
+   </div>
 </div>
