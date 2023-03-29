@@ -3,10 +3,10 @@
     <div class="col-md-3">
       <h2>User info</h2>
        <%= render 'books/user', user: @user %>
-     
+
      <h2>New book</h2>
        <%= render 'books/new', book: @book %>
-     
+
      <div class="col-md-8 offset-md-1">
        <h2>Books</h2>
        <table class="table table-hover table-inverse">
@@ -26,7 +26,7 @@
               <%= image_tag book.user.get_profile_image(50,50) %>
               <% end %>
              </tb>
-             <tb><%= link_to book.title, book_path %></tb>
+             <tb><%= link_to book.title, book_path(book) %></tb>
              <tb><%= book.body %></tb>
            <% end %>
            </tr>
