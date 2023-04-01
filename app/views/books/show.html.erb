@@ -5,7 +5,7 @@
      <%= render 'user', user: @user %>
 
      <h2>New book</h2>
-     <%= render 'new', book: @book %>
+     <%= render 'new', book: @newbook %>
 
 
      <div class="col-md-8 offset-md-1">
@@ -14,8 +14,8 @@
          <tbody>
            <tr>
              <td>
-               <%= link_to @book do %>
-               <%= image_tag @user.get_profile_image(100,100) %><br>
+               <%= link_to user_path(@book.user) do %>
+               <%= image_tag current_user.get_profile_image(100,100) %><br>
                <span><%= link_to @book.user.name %></span>
                <% end %>
              </td>
